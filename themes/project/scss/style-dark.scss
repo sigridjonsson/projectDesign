@@ -1,0 +1,206 @@
+@import '../../node_modules/normalize.css/normalize';
+
+@import '../../shared/fontawesome/scss/fontawesome';
+$fa-font-path: '../../shared/fontawesome/webfonts';
+@import '../../shared/fontawesome/scss/brands';
+@import '../../shared/fontawesome/scss/solid';
+@import '../../shared/fontawesome/scss/regular';
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap');
+
+@import 'variables-dark';
+@import 'typography';
+@import 'layout';
+@import 'other';
+@import 'header';
+@import 'footer';
+@import 'home';
+@import 'about';
+@import 'highlights';
+
+* {
+    background-color: $main-color;
+}
+
+.nav a,
+.nav-toggle {
+    color: $text-color;
+}
+
+a {
+    color: $text-color;
+}
+
+// ALL IMAGES
+.flash-img,
+.pic1,
+.pic2,
+.pic3,
+.album img,
+.single1 img,
+.single2 img {
+    filter: grayscale(50%);
+}
+
+
+// HOME
+.name {
+    color: $text-color;
+}
+
+.one,
+.two,
+.three {
+    border: 2px solid $text-color;
+}
+
+.one {
+    background-color: $grey-light;
+}
+
+.one p,
+.one h2,
+.one i {
+    color: $grey-dark;
+    background-color: $grey-light;
+}
+
+.two,
+.two p,
+.two h2,
+.two i {
+    color: $text-color;
+    background-color: $grey-medium;
+}
+
+.three {
+    background-color: $grey-dark;
+}
+
+.three p,
+.three h2,
+.three i {
+    color: $grey-light;
+    background-color: $grey-dark;
+}
+
+.footer {
+    background-color: $main-color;
+}
+
+.footer a:hover {
+    color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+.footer a {
+    color: $text-color;
+}
+
+
+// ABOUT
+.pic1 {
+    box-shadow: 20px 20px $grey-light;
+}
+
+.pic2 {
+    box-shadow: 20px 20px $grey-dark;
+}
+
+.pic3 {
+    box-shadow: 20px 20px $grey-medium;
+}
+
+@media (max-width: 767px) {
+    .pic1,
+    .pic2,
+    .pic3 {
+        box-shadow: none;
+    }
+}
+
+
+// HIGHLIGHTS
+.albums,
+.singles,
+.tour-dates {
+    border-top: 2px solid  $text-color;
+    border-bottom: 2px solid $text-color;
+}
+
+.listen-btn,
+.listen-btn2,
+.listen-btn3,
+.listen-btn-phone,
+.tour-date1 a,
+.tour-date2 a,
+.tour-date3 a {
+    background-color: $text-color;
+}
+
+.listen-btn-phone {
+    color: $grey-medium;
+}
+
+.listen-btn a,
+.listen-btn2 a,
+.listen-btn3 a,
+.listen-btn-phone a {
+    color: $grey-dark;
+}
+
+.listen-btn a:hover,
+.listen-btn2 a:hover,
+.listen-btn3 a:hover {
+    color: $white;
+}
+
+.tour-date1,
+.tour-date1 p {
+    color: $grey-dark;
+    background-color: $grey-light;
+}
+
+.tour-date2,
+.tour-date2 p {
+    color: $text-color;
+    background-color: $grey-medium;
+}
+
+.tour-date3,
+.tour-date3 p {
+    color: $grey-light;
+    background-color: $grey-dark;
+}
+
+.tour-date1 a,
+.tour-date2 a,
+.tour-date3 a {
+    color: $grey-dark;
+}
+
+.tour-date1 a:hover,
+.tour-date2 a:hover,
+.tour-date3 a:hover {
+    color: $white;
+}
+
+.tour-date1,
+.tour-date2,
+.tour-date3 {
+    border: 2px solid $text-color;
+}
+
+.tour-date1 .buy {
+    box-shadow: 7px 7px $grey-dark;
+}
+
+.tour-date2 .buy,
+.tour-date3 .buy {
+    box-shadow: 7px 7px $grey-light;
+}

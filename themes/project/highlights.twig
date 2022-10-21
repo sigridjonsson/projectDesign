@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js" lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if config.session.theme == "dark" %}
+        <link rel="icon" href="{{ theme_url }}/../../assets/img/logoDark.jpeg">
+    {% else %}
+        <link rel="icon" href="{{ theme_url }}/../../assets/img/logo.jpeg">
+    {% endif %}
+    <title>Highlights | Morgan Wilde</title>
+
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}" />
+    {% endif %}
+    {% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}" />
+    {% endif %}
+
+    {% if current_page %}
+        <link rel="canonical" href="{{ current_page.url }}" />
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ theme_url }}/../shared/css/font-awsome.min.css" type="text/css" />
+    <!-- Insert font choice here -->
+    {# <link rel="stylesheet" href="{{ theme_url }}/../shared//css/dorid-sans.css" type="text/css" /> #}
+    <!-- End -->
+    {% if config.session.theme == "dark" %}
+        <link rel="stylesheet" href="{{ theme_url }}/css/style-dark.css" type="text/css" />
+    {% else %}
+        <link rel="stylesheet" href="{{ theme_url }}/css/style-light.css" type="text/css" />
+    {% endif %}
+
+</head>
+<!-- "Widescreen-mode" can be activated in portfolio/config/config.yml -->
+<body{% if config.theme_config.widescreen %} class="widescreen"{% endif %}>
+    <div class="header" role="banner">
+        <div class="container">
+            <a class="nav-toggle" id="nav-toggle" title="Toggle Menu" role="button" aria-controls="nav" aria-expanded="false" tabindex="0">
+                <i class="fa fa-bars" aria-hidden="true" id="toggler"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </a>
+            <div class="nav">
+                <div id="nav" role="navigation" tabindex="-1">
+                    <ul>
+                        {% for page in pages(depthOffset=-1) if page.title and not page.hidden %}
+                            <li{% if page.id == current_page.id %} class="active"{% endif %}>
+                                <a href="{{ page.url }}">{{ page.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main" role="main">
+        <div class="records1">
+            <div class="album">
+                <h2 class="albums">ALBUM</h2>
+                <picture>
+                    <source media="(min-width: 668px)" srcset="{{ base_url }}/image/album.jpg?crop-to-fit&aspect-ratio=1:1">
+                    <source media="(min-width: 376px)" srcset="{{ base_url }}/image/album.jpg?crop-to-fit&aspect-ratio=1:1&w=667">
+                    <img src="{{ base_url }}/image/album.jpg?crop-to-fit&aspect-ratio=1:1&w=375" alt="Album" class="album">
+                </picture>
+                <div class="middle">
+                    <div class="listen-btn"><a href="#">LYSSNA</a></div>
+                </div>
+                <div class="listen-btn-phone"><a href="#">LYSSNA</a></div>
+            </div>
+        </div>
+        <div class="records2">
+            <br>
+            <h2 class="singles">SINGLAR</h2>
+            <div class="single1">
+                <picture>
+                    <source media="(min-width: 668px)" srcset="{{ base_url }}/image/single1.jpg?crop-to-fit&aspect-ratio=1:1">
+                    <source media="(min-width: 376px)" srcset="{{ base_url }}/image/single1.jpg?crop-to-fit&aspect-ratio=1:1&w=667">
+                    <img src="{{ base_url }}/image/single1.jpg?crop-to-fit&aspect-ratio=1:1&w=375" alt="Singel 1" class="single1">
+                </picture>
+                <div class="middle2">
+                    <div class="listen-btn2"><a href="#">LYSSNA</a></div>
+                </div>
+                <div class="listen-btn-phone"><a href="#">LYSSNA</a></div>
+            </div>
+            <div class="single2">
+                <picture>
+                    <source media="(min-width: 668px)" srcset="{{ base_url }}/image/single2.jpg?crop-to-fit&aspect-ratio=1:1">
+                    <source media="(min-width: 376px)" srcset="{{ base_url }}/image/single2.jpg?crop-to-fit&aspect-ratio=1:1&w=667">
+                    <img src="{{ base_url }}/image/single2.jpg?crop-to-fit&aspect-ratio=1:1&w=375" alt="Singel 2" class="single2">
+                </picture>
+                <div class="middle3">
+                    <div class="listen-btn3"><a href="#">LYSSNA</a></div>
+                </div>
+                <div class="listen-btn-phone"><a href="#">LYSSNA</a></div>
+            </div>
+            </div>
+            <div id="target"></div>
+            <h2 class="tour-dates">KONSERTER</h2>
+            <div class="tour">
+            <div class="tour-date1">
+                <p class="date">20/9-21</p>
+                <p class="location">Debaser Strand<br>Stockholm</p>
+                <a href="#" class="buy">BILJETTER</a>
+            </div>
+            <div class="tour-date2">
+                <p class="date">22/9-21</p>
+                <p class="location">Scala<br>London</p>
+                <a href="#" class="buy">BILJETTER</a>
+            </div>
+            <div class="tour-date3">
+                <p class="date">25/9-21</p>
+                <p class="location">La Maroquinerie<br>Paris</p>
+                <a href="#" class="buy">BILJETTER</a>
+            </div>
+            </div>
+        {{ content }}
+    </div>
+    <div class="footer">
+        <div class="container">
+            {% if config.session.theme == "dark" %}
+                <picture>
+                    <source media="(min-width: 668px)" srcset="{{ base_url }}/image/logoDark.jpeg">
+                    <source media="(min-width: 376px)" srcset="{{ base_url }}/image/logoDark.jpeg&w=667">
+                    <img src="{{ base_url }}/image/logoDark.jpeg&w=375" alt="Logo" class="logo">
+                </picture>
+            {% else %}
+                <picture>
+                    <source media="(min-width: 668px)" srcset="{{ base_url }}/image/logo.jpeg">
+                    <source media="(min-width: 376px)" srcset="{{ base_url }}/image/logo.jpeg&w=667">
+                    <img src="{{ base_url }}/image/logo.jpeg&w=375" alt="Logo" class="logo">
+                </picture>
+            {% endif %}
+            <div class="social">
+                <!-- Loads from FontAwesome (themes/shared/css/font-awesome.min.css) -->
+                {% for social in pages["_meta"].meta.social %}
+                    <a href="{{ social.url }}" title="{{ social.title }}" role="button">
+                        <i class="{{ social.icon }}" aria-hidden="true"></i>
+                        <span class="sr-only">{{ social.title }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="{{ theme_url }}/../shared//js/modernizr-3.3.1-custom.min.js" type="text/javascript"></script>
+    <script src="{{ theme_url }}/../shared//js/utils.js" type="text/javascript"></script>
+    <script src="{{ theme_url }}/../shared//js/responsive-navbar.js" type="text/javascript"></script>
+</body>
+</html>

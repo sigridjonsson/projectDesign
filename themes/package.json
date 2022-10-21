@@ -1,0 +1,29 @@
+{
+  "name": "themes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint \"**/*.scss\"",
+    "watch": "sass project/scss/style.scss project/css/style.css --no-source-map --watch",
+    "style": "npm run style-light && npm run style-dark",
+    "style-min": "sass project/scss/style.scss project/css/style.min.css --no-source-map --style compressed",
+    "style-dark": "sass project/scss/style-dark.scss project/css/style-dark.css --no-source-map",
+    "style-dark-min": "sass project/scss/style-dark.scss project/css/style-dark.min.css --no-source-map --style compressed",
+    "style-light": "sass project/scss/style-light.scss project/css/style-light.css --no-source-map",
+    "style-light-min": "sass project/scss/style.scss project/css/style.min.css --no-source-map --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.29.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-sass-guidelines": "^7.1.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1"
+  }
+}

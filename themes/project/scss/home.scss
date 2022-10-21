@@ -1,0 +1,93 @@
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em 5em;
+    padding: 1em;
+    width: 80%;
+    margin: auto;
+}
+
+// TEXT DIVS ON HOME PAGE
+.one {
+    border: 2px solid $my-white;
+    background-color: $green1;
+    height: 300px;
+    margin-top: 70px;
+    padding: 1.5em;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.one h2,
+.one p,
+.one a {
+    color: $brown;
+}
+
+.two {
+    border: 2px solid $my-white;
+    background-color: $green2;
+    height: 300px;
+    margin-top: 120px;
+    transition: all 0.6s ease;
+    padding: 1.5em;
+    text-align: center;
+}
+
+.two h2,
+.two p,
+.two a {
+    color: $my-black;
+}
+
+.three {
+    border: 2px solid $my-white;
+    background-color: $green3;
+    height: 300px;
+    margin-top: 170px;
+    transition: all 0.4s ease;
+    padding: 1.5em;
+    text-align: center;
+}
+
+.three h2,
+.three p,
+.three a {
+    color: $my-white;
+}
+
+.one p,
+.two p,
+.three p {
+    text-align: center;
+}
+
+.one:hover,
+.two:hover,
+.three:hover {
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 992px) {
+    .info-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .three {
+        margin-bottom: 50px;
+    }
+
+    .one p,
+    .two p,
+    .three p {
+        margin-top: -50px;
+    }
+}
